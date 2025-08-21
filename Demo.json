@@ -1,0 +1,271 @@
+{
+  "data": {
+    "id": "221182",
+    "type": "Instrument",
+    "attributes": {
+      "isinNumber": "FR0014006IX6",
+      "productRiskRating": 5,
+      "productGroup": 4,
+      "product": 503,
+      "status": 1,
+      "instrumentType": 1,
+      "instrumentNature": 2,
+      "securityCurrency": "EUR",
+      "simpleChineseName": "威立雅环境集团",
+      "traditionalChineseName": "威立雅環境有限公司",
+      "subType": 111,
+      "coupon": 2,
+      "couponPaymentFrequency": "1Y",
+      "firstCouponDate": "2022-02-15",
+      "bloombergTicker": "VIEFP",
+      "denomination": "Veolia Environnement SA VIEFP 2 PERP",
+      "productCreationDate": "2021-11-09",
+      "redemptionCurrency": "EUR",
+      "redemptionQuote": 100,
+      "sector": 11,
+      "amountIssued": 50000000,
+      "industryGroup": "Water",
+      "longName": "VIEFP 2 PERP",
+      "shortName": "VEOLIA ENVRNMT",
+      "bondGeography": "FR",
+      "extraAttributes": {
+        "interestRateBasis": 1,
+        "uniqueInstrumentKey": "FR0014006IX6",
+        "approved": 1,
+        "tpSystemCode": "APC-T24/800005-364/00001/20250303 14:42:35/",
+        "sanctioned": 0,
+        "maturityType": "PERP/CALL",
+        "calculationTypeDescription": "FIX-TO-VARIABLE BD",
+        "firstSettlementDate": "2021-11-15",
+        "basicSpread": "2.081",
+        "benchmarkMultiplier": "1",
+        "callFeature": "Annual",
+        "perpetual": 1,
+        "calcMaturity": "2172-02-15",
+        "deferredInterestPayment": 1,
+        "offerStartDate": "2021-11-09",
+        "dirtyCleanPrice": "CLEAN",
+        "quoteType": 1,
+        "ultimateParentIssuer": "Veolia Environnement SA",
+        "region": 4,
+        "oldProductType": 2,
+        "usSecurity": 0,
+        "previousCouponDate": "2023-02-15",
+        "nextCouponDate": "2024-02-15",
+        "extendable": 0,
+        "yield": 4.622,
+        "yieldToCall": 3.464,
+        "minimumInvestmentAmount": 100000,
+        "bidYield": 4.631982,
+        "tradeCurrency": "EUR",
+        "percentageParQuoted": 1,
+        "couponType": "VARIABLE"
+      },
+      "additionalAttributes": {
+        "newKeId": "1A",
+        "accrualStartDate": "2021-11-15",
+        "yieldToWorst": 3.464,
+        "daysToSettlement": 2,
+        "couponFrequencyYieldConvention": 1.0,
+        "dayCountConvention": "0",
+        "accrualRule": 19,
+        "alternateCurrency": "EUR",
+        "approvedForUnderlying": 2,
+        "convertible": 0,
+        "exchangeable": 0,
+        "initialPublicOffering": 0,
+        "liquidity": 1,
+        "minimumTradeQuantity": 1,
+        "minimumSubsequentInvestment": 100000,
+        "negotiability": 1,
+        "oldProductTypePvb": 2,
+        "preInvestmentCoolingRequired": 2,
+        "countryCode": "FR",
+        "tapType": "10",
+        "floater": 1,
+        "couponRateSpread": 2.081,
+        "couponStartDate": "2023-02-15",
+        "priceScalingFactorChangeDate": "2021-11-09",
+        "couponEndDate": "2024-02-14",
+        "bbSecurityDomicile": "FR",
+        "bbIssuerDomicile": "FR",
+        "linkageStr": "APC-T24/800005-364/00001/20250303 14:42:35/",
+        "prcYldYtmAsk": 4.622,
+        "scbInstrumentType": 1,
+        "openCloseEnded": "503",
+        "asset": {
+          "assetClass": "02/100",
+          "assetClassSubTotal": "100",
+          "assetClassTotal": "100",
+          "subAssetClass": "09/100"
+        },
+        "creditQuality": {},
+        "equityRegion": {},
+        "fixedIncomeRegion": {},
+        "fund": {},
+        "settlement": {}
+      },
+      "pricingAndIssuer": {
+        "price": [
+          {
+            "lastPrice": 96.279682,
+            "lastPriceDate": "2025-05-30",
+            "lastPriceValid": "2025-06-02",
+            "priceSource": "BVAL",
+            "priceType": "BOND",
+            "priceCurrency": "EUR",
+            "priceFactor": 1,
+            "parValue": 100000
+          }
+        ],
+        "issuer": [
+          {
+            "issueQuantity": 50000000,
+            "isin": "FR0014006IX6",
+            "referenceCurrency": "EUR",
+            "issuerInstrumentType": "1",
+            "issuerHouse": "990000742",
+            "legalName": "Veolia Environnement SA",
+            "taxCountry": "FR",
+            "issuerCode": "990000742",
+            "issuerName": "Veolia Environnement SA",
+            "issuePrice": 100,
+            "legalEntityIdentifier": "969500LENY69X51O0T31",
+            "issuerBloombergId": "BBG001FMSKK5"
+          }
+        ]
+      },
+      "riskAndRating": {
+        "ultimateParentInstitution": "990000742",
+        "fundHouseName": "Veolia Environnement SA",
+        "issueDate": "2021-11-15",
+        "status": 1,
+        "currency": "EUR",
+        "riskCountry": "FR",
+        "concentrationCheckIssuer": "BBG001FMSKK5",
+        "concentrationCheckIssuerName": "Veolia Environnement SA",
+        "concentrationCheckRiskCountry": "FR",
+        "bbIssuerDomicile": "FR",
+        "risk": [
+          {
+            "productRiskRating": 5,
+            "riskCurrency": "EUR",
+            "riskCountry": "FR",
+            "riskNature": "2",
+            "productRiskRatingChangeDate": "2023-05-26",
+            "ultimateParentCountryOfRisk": "FR"
+          }
+        ],
+        "rating": [
+          {
+            "bondRating": "NIG",
+            "moodyRating": "Baa3",
+            "fitchRating": "NR",
+            "spRating": "BB+",
+            "fitchRatingDate": "2024-06-11",
+            "spRatingDate": "2021-11-08",
+            "moodyRatingDate": "2021-11-08",
+            "previousProductRiskRating": 6
+          }
+        ]
+      },
+      "marketAndDistribution": {
+        "alternateMarketIdentifiers": [
+          {
+            "isin": "FR0014006IX6",
+            "bloombergFigid": "BBG013F38983",
+            "sedol": "BPBMK87",
+            "cusip": "BS3554059"
+          }
+        ],
+        "distributions": [
+          {
+            "country": "HK",
+            "segment": "5",
+            "productRiskRatingCountry": 5,
+            "channel": 2,
+            "branch": 1,
+            "distributionStatus": 1,
+            "retailBondType": 0,
+            "instrumentNameCountry": "[HK-PI][C]VIEFP 2 PERP",
+            "instrumentNameCountrySimplifiedChinese": "威立雅环境集团",
+            "instrumentNameCountryTraditionalChinese": "威立雅環境有限公司",
+            "professionalClientOrLocalEquivalentCountry": 1,
+            "highYieldIndicator": 1,
+            "previousProductRiskRatingCountry": 6,
+            "productRiskRatingCountryChangeDate": "2023-05-26",
+            "hkFundShareClass": "#N/A",
+            "lossAbsorbingCapacityCountry": 0,
+            "openDate": "2021-11-09",
+            "complexCountry": 1
+          },
+          {
+            "country": "JE",
+            "segment": "5",
+            "productRiskRatingCountry": 5,
+            "channel": 2,
+            "branch": 1,
+            "distributionStatus": 1,
+            "retailBondType": 0,
+            "instrumentNameCountrySimplifiedChinese": "威立雅环境集团",
+            "instrumentNameCountryTraditionalChinese": "威立雅環境有限公司",
+            "professionalClientOrLocalEquivalentCountry": 0,
+            "highYieldIndicator": 1,
+            "authorizedBySfc": 0,
+            "previousProductRiskRatingCountry": 6,
+            "productRiskRatingCountryChangeDate": "2023-05-26",
+            "hkFundShareClass": "#N/A",
+            "openDate": "2021-11-09"
+          },
+          {
+            "country": "GB",
+            "segment": "5",
+            "productRiskRatingCountry": 5,
+            "channel": 2,
+            "branch": 1,
+            "distributionStatus": 1,
+            "retailBondType": 0,
+            "instrumentNameCountrySimplifiedChinese": "威立雅环境集团",
+            "instrumentNameCountryTraditionalChinese": "威立雅環境有限公司",
+            "professionalClientOrLocalEquivalentCountry": 1,
+            "highYieldIndicator": 1,
+            "authorizedBySfc": 0,
+            "previousProductRiskRatingCountry": 6,
+            "productRiskRatingCountryChangeDate": "2023-05-26",
+            "hkFundShareClass": "#N/A",
+            "openDate": "2021-11-09"
+          }
+        ]
+      },
+      "segments": [
+        {
+          "interestSchedule": "15112021/000200000/15022022/000200000/15022023/000200000/...",
+          "priceCalculationRule": "2",
+          "paymentFrequencyUnit": "7",
+          "distributions": [
+            {
+              "country": "AE",
+              "segment": 5
+            },
+            {
+              "country": "GB",
+              "segment": 5
+            },
+            {
+              "country": "HK",
+              "segment": 5
+            },
+            {
+              "country": "JE",
+              "segment": 5
+            },
+            {
+              "country": "SG",
+              "segment": 5
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
