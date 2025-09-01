@@ -1,0 +1,261 @@
+package com.example.instrument;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * POJO model for the provided Instrument JSON.
+ *
+ * Usage with Jackson:
+ * ObjectMapper mapper = new ObjectMapper()
+ *     .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
+ * InstrumentResponse resp = mapper.readValue(jsonFileOrString, InstrumentResponse.class);
+ */
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class InstrumentResponse {
+    private DataNode data;
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class DataNode {
+        private String id;
+        private String type;
+        private Attributes attributes;
+    }
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Attributes {
+        private String isinNumber;
+        private Integer productRiskRating;
+        private Integer productGroup;
+        private Integer product;
+        private Integer status;
+        private Integer instrumentType;
+        private Integer instrumentNature;
+        private String securityCurrency;
+        private String simpleChineseName;
+        private String traditionalChineseName;
+        private Integer subType;
+        private Integer coupon;
+        private String couponPaymentFrequency;
+        private String firstCouponDate; // keep as String to avoid date parsing issues
+        private String bloombergTicker;
+        private String denomination;
+        private String productCreationDate;
+        private String redemptionCurrency;
+        private Integer redemptionQuote;
+        private Integer sector;
+        private Long amountIssued;
+        private String industryGroup;
+        private String longName;
+        private String shortName;
+        private String bondGeography;
+        private Integer interestRateBasis;
+        private String uniqueInstrumentKey;
+        private Integer approved;
+        private String tpSystemCode;
+        private Integer sanctioned;
+        private String maturityType;
+        private String calculationTypeDescription;
+        private String firstSettlementDate;
+        private Integer sinkable;
+        private Integer puttable;
+        private String basicSpread;
+        private String benchmarkMultiplier;
+        private String callFeature;
+        private Integer perpetual;
+        private String calcMaturity;
+        private Integer deferredInterestPayment;
+        private String offerStartDate;
+        private Integer sinkingFundFactor;
+        private String dirtyCleanPrice;
+        private Integer quoteType;
+        private String ultimateParentIssuer;
+        private Integer region;
+        private Integer oldProductType;
+        private Integer usSecurity;
+        private String previousCouponDate;
+        private String nextCouponDate;
+        private Integer extendable;
+        private Double yield;
+        private Double yieldToCall;
+        private Integer minimumInvestmentAmount;
+        private Double bidYield;
+        private String tradeCurrency;
+        private Integer percentageParQuoted;
+        private String couponType;
+        private String newkeId;
+        private String accrualStartDate;
+        private Double yieldToWorst;
+        private Integer daysToSettlement;
+        private Double couponFrequencyYieldConvention;
+        private String dayCountConvention;
+        private Integer accrualRule;
+        private String alternateCurrency;
+        private Integer approvedForUnderlying;
+        private Integer convertible;
+        private Integer exchangeable;
+        private Integer initialPublicOffering;
+        private String liquidity;
+        private String minimumTradeQuantity;
+        private Integer minimumSubsequentInvestment;
+        private Integer negotiability;
+        private Integer oldProductTypePvb;
+        private Integer preInvestmentCoolingRequired;
+        private String countryCode;
+        private String tapType;
+        private Integer floater;
+        private Double couponRateSpread;
+        private String couponStartDate;
+        private String priceScalingFactorChangeDate;
+        private String couponEndDate;
+        private String bbSecurityDomicile;
+        private String bbIssuerDomicile;
+        private String linkageStr;
+        private Double prcYldYtmAsk;
+        private Integer scbInstrumentType;
+        private String openCloseEnded;
+        private Asset asset;
+        private Map<String, Object> creditQuality; // empty object → map
+        private Map<String, Object> equityRegion;  // empty object → map
+        private Map<String, Object> fixedIncomeRegion; // empty object → map
+        private Map<String, Object> fund; // empty object → map
+        private Map<String, Object> settlement; // empty object → map
+        private List<Price> price;
+        private List<Issuer> issuer;
+        private List<Risk> risk;
+        private List<Rating> rating;
+        private List<AlternateMarketIdentifier> alternateMarketIdentifiers;
+        private List<Distribution> distributions;
+        private List<Segment> segments;
+    }
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Asset {
+        private String assetClass;
+        private String assetClassSubTotal;
+        private String assetClassTotal;
+        private String subAssetClass;
+    }
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Price {
+        private Double lastPrice;
+        private String lastPriceDate;
+        private String lastPriceValid;
+        private String priceSource;
+        private String priceType;
+        private String priceCurrency;
+        private Integer priceFactor;
+        private Integer parValue;
+    }
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Issuer {
+        private Long issueQuantity;
+        private String isin;
+        private String referenceCurrency;
+        private String issuerInstrumentType;
+        private String issuerHouse;
+        private String legalName;
+        private String taxCountry;
+        private String issuerCode;
+        private String issuerName;
+        private Integer issuePrice;
+        private String legalEntityIdentifier;
+        private String issuerBloombergId;
+        private String ultimateParentInstitution;
+        private String fundHouseName;
+        private String issueDate;
+        private Integer status;
+        private String currency;
+        private String riskCountry;
+        private String concentrationCheckIssuer;
+        private String concentrationCheckIssuerName;
+        private String concentrationCheckRiskCountry;
+        private String bbIssuerDomicile;
+    }
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Risk {
+        private Integer productRiskRating;
+        private String riskCurrency;
+        private String riskCountry;
+        private String riskNature;
+        private String productRiskRatingChangeDate;
+        private String ultimateParentCountryOfRisk;
+    }
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Rating {
+        private String bondRating;
+        private String moodyRating;
+        private String fitchRating;
+        private String spRating;
+        private String fitchRatingDate;
+        private String spRatingDate;
+        private String moodyRatingDate;
+        private Integer previousProductRiskRating;
+    }
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class AlternateMarketIdentifier {
+        private String isin;
+        private String bloombergFigiId;
+        private String sedol;
+        private String cusip;
+    }
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Distribution {
+        private String country;
+        private String segment; // note: in JSON this is a string ("5")
+        private Integer productRiskRatingCountry;
+        private Integer channel;
+        private Integer branch;
+        private Integer distributionStatus;
+        private Integer retailBondType;
+        private String instrumentNameCountry;
+        private String instrumentNameCountrySimplifiedChinese;
+        private String instrumentNameCountryTraditionalChinese;
+        private Integer professionalClientOrLocalEquivalentCountry;
+        private Integer highYieldIndicator;
+        private Integer previousProductRiskRatingCountry;
+        private String productRiskRatingCountryChangeDate;
+        private String hkFundShareClass;
+        private Integer lossAbsorbingCapacityCountry;
+        private String openDate;
+        private Integer complexCountry;
+        private Integer authorizedBySfc;
+    }
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Segment {
+        private String interestSchedule;
+        private String priceCalculationRule;
+        private String paymentFrequencyUnit;
+        private List<DistributionRef> distributions;
+    }
+
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class DistributionRef {
+        private String country;
+        @JsonProperty("segment")
+        private Integer segmentNumber; // in segments.distributions, segment is numeric
+    }
+}
