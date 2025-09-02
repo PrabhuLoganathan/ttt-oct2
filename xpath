@@ -1,0 +1,4 @@
+WebElement selectCell = driver.findElement(
+    By.xpath("//tr[td[@data-attribute-name='Product Code and Description']//span[contains(text(),'MASTP')]]/td[@data-attribute-name='Select']")
+);
+selectCell.click();
