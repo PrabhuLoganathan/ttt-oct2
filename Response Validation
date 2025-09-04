@@ -1,0 +1,45 @@
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.junit.Assert;
+
+import java.io.File;
+import java.util.Arrays;
+import java.util.List;
+
+@Then("^response should match json file \"([^\"]+)\" ignoring fields \"([^\"]+)\"$")
+public void response_should_match_json_file_ignoring_fields(String fileName, String ignoreFields) throws Exception {
+    // 1. Extract response as String
+    String actualResponse = helper.response().extract().body().asString();
+
+    // 2. Load expected and actual JSON
+    ObjectMapper mapper = new ObjectMapper();
+    JsonNode expectedJson = mapper.readTree(new File("src/test/resources/json/" + fileName));
+    JsonNode actualJson = mapper.readTree(actualResponse);
+
+    // 3. Convert ignoreFields string to list
+    List<String> fieldsToIgnore = Arrays.asList(ignoreFields.split(","));
+
+    // 4. Remove fields from both JSONs
+    for (String field : fieldsToIgnore) {
+        removeField((ObjectNode) expectedJson, field.trim());
+        removeField((ObjectNode) actualJson, field.trim());
+    }
+
+    // 5. Compare
+    Assert.assertEquals("Response does not match expected JSON", expectedJson, actualJson);
+}
+
+// Recursive field remover
+private void removeField(ObjectNode node, String fieldName) {
+    if (node.has(fieldName)) {
+        node.remove(fieldName);
+    }
+    node.elements().forEachRemaining(child -> {
+        if (child.isObject()) {
+            removeField((ObjectNode) child, fieldName);
+        }
+    });
+}
+
+Then response should match json file "InstrumentDetailsResponse.json" ignoring fields "timestamp,date"
