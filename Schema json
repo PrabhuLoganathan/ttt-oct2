@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Instrument Response Schema",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "isinNumber": { "type": "string" },
+            "productRiskRating": { "type": "integer" },
+            "productGroup": { "type": "integer" },
+            "product": { "type": "integer" },
+            "status": { "type": "integer" },
+            "instrumentType": { "type": "integer" },
+            "instrumentNature": { "type": "integer" },
+            "securityCurrency": { "type": "string" },
+            "simpleChineseName": { "type": "string" },
+            "traditionalChineseName": { "type": "string" },
+            "subType": { "type": "integer" },
+            "coupon": { "type": "integer" },
+            "couponPaymentFrequency": { "type": "string" },
+            "firstCouponDate": { "type": "string", "format": "date" },
+            "bloombergTicker": { "type": "string" },
+            "denomination": { "type": "string" },
+            "productCreationDate": { "type": "string", "format": "date" },
+            "redemptionCurrency": { "type": "string" },
+            "redemptionQuote": { "type": "number" },
+            "sector": { "type": "integer" },
+            "amountIssued": { "type": "number" },
+            "industryGroup": { "type": "string" },
+            "longName": { "type": "string" },
+            "shortName": { "type": "string" },
+            "bondGeography": { "type": "string" },
+            "extraAttributes": {
+              "type": "object",
+              "properties": {
+                "interestRateBasis": { "type": "integer" },
+                "uniqueInstrumentKey": { "type": "string" },
+                "approved": { "type": "integer" },
+                "tpSystemCode": { "type": "string" },
+                "sanctioned": { "type": "integer" },
+                "maturityType": { "type": "string" },
+                "calculationTypeDescription": { "type": "string" },
+                "firstSettlementDate": { "type": "string", "format": "date" },
+                "basicSpread": { "type": "string" },
+                "benchmarkMultiplier": { "type": "string" },
+                "callFeature": { "type": "string" },
+                "perpetual": { "type": "integer" },
+                "calcMaturity": { "type": "string" },
+                "deferredInterestPayment": { "type": "integer" },
+                "offerStartDate": { "type": "string", "format": "date" },
+                "dirtyCleanPrice": { "type": "string" },
+                "quoteType": { "type": "integer" },
+                "ultimateParentIssuer": { "type": "string" },
+                "region": { "type": "integer" },
+                "oldProductType": { "type": "integer" },
+                "usSecurity": { "type": "integer" },
+                "previousCouponDate": { "type": "string", "format": "date" },
+                "nextCouponDate": { "type": "string", "format": "date" },
+                "extendable": { "type": "integer" },
+                "yield": { "type": "number" },
+                "yieldToCall": { "type": "number" },
+                "minimumInvestmentAmount": { "type": "number" },
+                "bidYield": { "type": "number" },
+                "tradeCurrency": { "type": "string" },
+                "percentageParQuoted": { "type": "integer" },
+                "couponType": { "type": "string" }
+              },
+              "required": [
+                "uniqueInstrumentKey",
+                "approved",
+                "maturityType"
+              ]
+            }
+          },
+          "required": [
+            "isinNumber",
+            "productRiskRating",
+            "status",
+            "subType",
+            "securityCurrency"
+          ]
+        }
+      },
+      "required": ["id", "type", "attributes"]
+    }
+  },
+  "required": ["data"]
+}
+
+  Then response should match schema "instrument_schema.json"
+
+import io.restassured.module.jsv.JsonSchemaValidator;
+import java.io.File;
+
+@Then("^response should match schema \"([^\"]+)\"$")
+public void response_should_match_schema(String schemaFileName) {
+    helper.response()
+          .then()
+          .assertThat()
+          .body(JsonSchemaValidator.matchesJsonSchema(
+                new File("src/test/resources/json/" + schemaFileName)));
+}
+
+
+
